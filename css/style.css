@@ -2,6 +2,7 @@
 
 * {
   font-family: "DM Sans", sans-serif;
+  transition: 0.15s ease;
 }
 
 :root {
@@ -23,8 +24,29 @@ body {
   margin: 0;
 }
 
+h2 {
+  margin: 0;
+}
+
 .attribution {
-    position: absolute;
+  font-size: 15px;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 10px;
+  color: var(--dark-brown);
+}
+
+a {
+  color: var(--soft-red);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--cyan)
+}
+
+.chart {
+  margin-right: 8px;
 }
 
 .main {
@@ -40,27 +62,31 @@ body {
 .card-main {
   width: fit-content;
   height: fit-content;
+  min-width: 390;
 }
 
 .card-top {
   color: var(--cream);
-  padding: 15px;
+  padding: 20px;
   display: flex;
   flex-wrap: wrap;
-  width: 400px;
+  width: 350px;
   height: 60px;
   border-radius: 20px;
   background-color: var(--soft-red);
-  /* display: inline-block; */
+
+  position: relative;
 }
 
 .card-bottom {
   background-color: var(--very-pale-orange);
-  width: 400px;
-  height: 200px;
-  padding: 15px;
+  width: 350px;
+  height: fit-content;
+  padding: 20px;
   border-radius: 20px;
   margin-top: 20px;
+  text-align: left;
+  padding-bottom: 30px;
 }
 
 .logo {
@@ -68,4 +94,63 @@ body {
   float: right;
   width: fit-content;
   height: fit-content;
+  right: 0;
+  margin-right: 20px;
+  align-self: center;
+}
+
+.balance {
+  align-self: center;
+  /* margin-left: 14px; */
+}
+
+.amount-balance {
+  margin-top: 5px;
+}
+
+.spending {
+  font-weight: 600;
+  font-size: 22px;
+  margin-bottom: 20px;
+  color: var(--dark-brown);
+}
+
+hr {
+  border: 1px solid var(--cream);
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.section2 {
+  display: flex;
+  justify-content: space-between;
+  position: relative;
+}
+
+.txt-total {
+  color: var(--medium-brown);
+}
+
+.percent-change {
+  font-weight: 600;
+}
+
+.right {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  text-align: right;
+}
+
+.total {
+  font-size: 30px;
+  margin-top: 5px;
+}
+
+.txt-balance, .spending, .txt-total, .attribution {
+  user-select: none;
+}
+
+::selection {
+  background: var(--cyan);
 }

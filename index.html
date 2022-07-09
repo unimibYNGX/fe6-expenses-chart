@@ -1,51 +1,79 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
 
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <link rel="stylesheet" href="/css/style.css">
-  
-  <title>Frontend Mentor | Expenses chart component</title>
-</head>
-<body>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
 
-  <div class="main">
-    <div class="card-main">
-      <div class="card-top">
-        <div class="balance">
-          My balance
-          $921.48
+    <title>Frontend Mentor | Expenses chart component</title>
+  </head>
+  <body>
+    <div class="main">
+      <div
+        class="card-main"
+        data-tilt
+        data-tilt-reverse="false"
+        data-tilt-speed="100"
+        data-tilt-perspective="2000"
+        data-tilt-max="5"
+      >
+        <div class="card-top">
+          <div class="balance">
+            <div class="txt-balance">My balance</div>
+            <h2>
+              <div class="amount-balance" id="balance">{$balance}</div>
+            </h2>
+          </div>
+          <img
+            src="/images/logo.svg"
+            alt=""
+            class="logo"
+            id="logo"
+            draggable="false"
+          />
         </div>
-        <img src="/images/logo.svg" alt="" class="logo" id="logo">
+        <div class="card-bottom">
+          <div class="section1">
+            <div class="spending">Spending - Last 7 days</div>
+            <div style="height: 200px">
+              <canvas id="myChart" class="chart"></canvas>
+            </div>
+          </div>
+          <hr />
+          <div class="section2">
+            <div class="left">
+              <div class="txt-total">Total this week</div>
+              <h2>
+                <div class="total" id="total">{$total}</div>
+              </h2>
+            </div>
+            <div class="right">
+              <div class="percent-change" id="percent-change">+2.4%</div>
+              <div class="txt-total">from last month</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="card-bottom">
-        <div class="section1">
-          <div class="spending">Spending - Last 7 days</div>
-          mon
-          tue
-          wed
-          thu
-          fri
-          sat
-          sun
-        </div>
-        <div class="section2">
-          Total this month
-          $478.33
-          +2.4%
-          from last month
-        </div>
+      <div class="attribution">
+        Challenge by
+        <a
+          href="https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt/hub/expenses-chart-component-pCE_ze9Iea"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/unimibYNGX">Yang</a>.
       </div>
     </div>
-  </div>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io/challenges/expenses-chart-component-e7yJBUdjwt/hub/expenses-chart-component-pCE_ze9Iea" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="https://github.com/unimibYNGX">Yang</a>.
-  </div>
 
-  <script src="js/index.js"></script>
-</body>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/vanilla-tilt.min.js"></script>
+  </body>
 </html>

@@ -27,11 +27,12 @@ async function getData() {
 }
 
 function setBalance(balance) {
-    document.getElementById('balance').innerHTML = '$' + balance
+  document.getElementById("balance").innerHTML = "$" + balance;
 }
 
 function setTotal(amounts) {
-    document.getElementById('total').innerHTML = '$' + amounts.reduce((a,b)=>a+b)
+  document.getElementById("total").innerHTML =
+    "$" + amounts.reduce((a, b) => a + b);
 }
 
 function makeGraph(data, labels, amounts) {
@@ -54,7 +55,7 @@ function makeGraph(data, labels, amounts) {
     type: "bar",
     data: data,
     options: {
-        maintainAspectRatio: false,
+      maintainAspectRatio: false,
       plugins: {
         legend: {
           display: false,

@@ -42,7 +42,7 @@ a {
 }
 
 a:hover {
-  color: var(--cyan)
+  color: var(--cyan);
 }
 
 .chart {
@@ -147,7 +147,10 @@ hr {
   margin-top: 5px;
 }
 
-.txt-balance, .spending, .txt-total, .attribution {
+.txt-balance,
+.spending,
+.txt-total,
+.attribution {
   user-select: none;
 }
 

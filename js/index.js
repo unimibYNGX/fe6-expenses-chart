@@ -1,6 +1,8 @@
 var labels = new Array(7);
 var amounts = new Array(7);
 var balance = 921.48;
+const soft_red = "hsl(10, 79%, 65%)";
+const cyan = "hsl(186, 34%, 60%)";
 
 const data = {
   labels: "",
@@ -35,14 +37,37 @@ function setTotal(amounts) {
     "$" + amounts.reduce((a, b) => a + b);
 }
 
+// Array.prototype.max = function() {
+//   return Math.max.apply(null, this);
+// };
+
+function getAmountArr(data) {
+  var arr = new Array(7);
+  for (let i = 0; i < arr.length; i++) {
+    arr[i] = data[i].amount;
+  }
+  return arr;
+}
+
+function getBGColorArr(data) {
+  console.log(data)
+  var max = Math.max.apply(Math, data)
+  var arr = new Array(7)
+  for (let i = 0; i < arr.length; i++) {
+    if (data[i] != max) arr[i] = soft_red;
+    else arr[i] = cyan;
+  }
+  return arr
+}
+
 function makeGraph(data, labels, amounts) {
   data = {
     labels: labels,
     datasets: [
       {
         label: "Dataset",
-        backgroundColor: "hsl(10, 79%, 65%)",
-        borderColor: "rgb(255, 99, 132)",
+        backgroundColor: getBGColorArr(getAmountArr(data)),
+        borderColor: "hsl(10, 79%, 65%)",
         borderRadius: 3,
         borderSkipped: false,
         hoverBackgroundColor: "hsl(186, 34%, 60%)",

@@ -21,7 +21,7 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--cream);
-  margin: 0;
+  /* margin: 0; */
 }
 
 h2 {
@@ -29,11 +29,13 @@ h2 {
 }
 
 .attribution {
+  /* position: absolute; */
   font-size: 15px;
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
   color: var(--dark-brown);
+  /* min-width: 325px; */
 }
 
 a {
@@ -62,31 +64,41 @@ a:hover {
 .card-main {
   width: fit-content;
   height: fit-content;
-  min-width: 390;
+  /* min-width: 390px; */
+  box-sizing: border-box;
 }
 
 .card-top {
+  box-sizing: border-box;
   color: var(--cream);
   padding: 20px;
   display: flex;
   flex-wrap: wrap;
   width: 350px;
-  height: 60px;
+  /* height: 60px; */
+  height: auto;
   border-radius: 20px;
   background-color: var(--soft-red);
-
+  margin-left: 50px;
+  margin-right: 50px;
   position: relative;
+  min-width: 285px;
 }
 
 .card-bottom {
+  box-sizing: border-box;
   background-color: var(--very-pale-orange);
   width: 350px;
+  /* width: 80vw; */
   height: fit-content;
   padding: 20px;
   border-radius: 20px;
   margin-top: 20px;
   text-align: left;
   padding-bottom: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
+  min-width: 285px;
 }
 
 .logo {

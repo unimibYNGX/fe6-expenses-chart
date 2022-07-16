@@ -3,6 +3,8 @@ var amounts = new Array(7);
 var balance = 921.48;
 const soft_red = "hsl(10, 79%, 65%)";
 const cyan = "hsl(186, 34%, 60%)";
+const lighter_cyan = "rgb(189,222,228)";
+const lighter_soft_red = "rgb(241,160,140)";
 
 const data = {
   labels: "",
@@ -37,10 +39,6 @@ function setTotal(amounts) {
     "$" + amounts.reduce((a, b) => a + b);
 }
 
-// Array.prototype.max = function() {
-//   return Math.max.apply(null, this);
-// };
-
 function getAmountArr(data) {
   var arr = new Array(7);
   for (let i = 0; i < arr.length; i++) {
@@ -50,14 +48,24 @@ function getAmountArr(data) {
 }
 
 function getBGColorArr(data) {
-  console.log(data)
-  var max = Math.max.apply(Math, data)
-  var arr = new Array(7)
+  console.log(data);
+  var max = Math.max.apply(Math, data);
+  var arr = new Array(7);
   for (let i = 0; i < arr.length; i++) {
     if (data[i] != max) arr[i] = soft_red;
     else arr[i] = cyan;
   }
-  return arr
+  return arr;
+}
+
+function getHoverBGColorArr(data) {
+  var max = Math.max.apply(Math, data);
+  var arr = new Array(7);
+  for (let i = 0; i < arr.length; i++) {
+    if (data[i] != max) arr[i] = lighter_soft_red;
+    else arr[i] = lighter_cyan;
+  }
+  return arr;
 }
 
 function makeGraph(data, labels, amounts) {
@@ -65,12 +73,12 @@ function makeGraph(data, labels, amounts) {
     labels: labels,
     datasets: [
       {
-        label: "Dataset",
+        label: "",
         backgroundColor: getBGColorArr(getAmountArr(data)),
         borderColor: "hsl(10, 79%, 65%)",
         borderRadius: 3,
         borderSkipped: false,
-        hoverBackgroundColor: "hsl(186, 34%, 60%)",
+        hoverBackgroundColor: getHoverBGColorArr(getAmountArr(data)),
         barThickness: 30,
         data: amounts,
       },
@@ -80,13 +88,19 @@ function makeGraph(data, labels, amounts) {
     type: "bar",
     data: data,
     options: {
+      onHover: (event, chartElement) => {
+        event.native.target.style.cursor = chartElement[0]
+          ? "pointer"
+          : "default";
+      },
       maintainAspectRatio: false,
       plugins: {
         legend: {
           display: false,
         },
         tooltip: {
-          enabled: false,
+          enabled: true,
+          caretSize: 0,
         },
       },
       scales: {

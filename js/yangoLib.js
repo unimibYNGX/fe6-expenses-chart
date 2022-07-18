@@ -43,14 +43,13 @@ function checkSize(request, query) {
 }
 
 function mobile() {
-    set('card-top', 'width', '80vw')
-    set('card-bottom', 'width', '80vw')
-
+  set("card-top", "width", "80vw");
+  set("card-bottom", "width", "80vw");
 }
 
 function desktop() {
-    set('card-top', 'width', '350px')
-    set('card-bottom', 'width', '350px')
+  set("card-top", "width", "350px");
+  set("card-bottom", "width", "350px");
 }
 
 window.addEventListener("resize", function (event) {

@@ -21,7 +21,6 @@ body {
   width: 100%;
   height: 100%;
   background-color: var(--cream);
-  /* margin: 0; */
 }
 
 h2 {
@@ -29,13 +28,11 @@ h2 {
 }
 
 .attribution {
-  /* position: absolute; */
   font-size: 15px;
   position: absolute;
   bottom: 0;
   margin-bottom: 10px;
   color: var(--dark-brown);
-  /* min-width: 325px; */
 }
 
 a {
@@ -64,7 +61,6 @@ a:hover {
 .card-main {
   width: fit-content;
   height: fit-content;
-  /* min-width: 390px; */
   box-sizing: border-box;
 }
 
@@ -75,7 +71,6 @@ a:hover {
   display: flex;
   flex-wrap: wrap;
   width: 350px;
-  /* height: 60px; */
   height: auto;
   border-radius: 20px;
   background-color: var(--soft-red);
@@ -89,7 +84,6 @@ a:hover {
   box-sizing: border-box;
   background-color: var(--very-pale-orange);
   width: 350px;
-  /* width: 80vw; */
   height: fit-content;
   padding: 20px;
   border-radius: 20px;
@@ -113,7 +107,6 @@ a:hover {
 
 .balance {
   align-self: center;
-  /* margin-left: 14px; */
 }
 
 .amount-balance {
